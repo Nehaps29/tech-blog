@@ -1,4 +1,19 @@
-<div class="text-center">
-  <h2>{{title}}</h2>
-  <p>{{description}}</p>
+{{#if blogs.length}}
+<div>
+  <div class = "row align-items-center">
+    <h3>Welcome to Tech Blog, {{name}}</h3>
+  </div>
+  {{#each blogs as |blog|}}
+  <input type = "hidden" name ="blog-id" value = "{{blog.id}}"/>
+  <div class = "card">
+    <div class = "card-header">
+      <p><a class = "link" href="/dashboard/edit/{{id}}">{{title}}</a></p>
+    </div>
+       <button class="btn btn-primary" id = "del-blog">Delete Blog!</button>
+  </div>
+  {{/each}}
 </div>
+{{/if}}
+ <button type="submit" id = "add-blog">Add New Blog!</button>
+
+ <script src="js/delete.js">
